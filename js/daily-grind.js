@@ -57,6 +57,26 @@ switch(myDay){
 
     case 0: 
       today = "Sunday";
+      coffee = {
+        color: "purple",
+        name: "frappaccino",
+        pic: "images/frappaccino.jpg",
+        alt: "Frappaccino Picture",
+        day: "Sunday",
+        desc: `Come end your weekend with a sweet treat! We have Frappaccinos for our specials today!`
+     };
+    break;
+
+    case 1: 
+    today = "Monday";
+      coffee = {
+        color: "grey",
+        name: "Drip",
+        pic: "images/drip.jpg",
+        alt: "Drip Picture",
+        day: "Monday",
+        desc: `The weekend is over, you probably need a pick me up. Our extra strong Drip Coffee will do the trick!`
+     };
     break;
 
     case 2: 
@@ -67,7 +87,7 @@ switch(myDay){
         pic: "images/cold-brew.jpg",
         alt: "Cold Brew Picture",
         day: "Tuesday",
-        desc: `It's Tuesday, and it still may feel like Monday, come get a Cold Brew!`
+        desc: `It's Tuesday, and it still may feel like Monday, Come get a Cold Brew!`
      };
     break;
 
@@ -98,6 +118,30 @@ switch(myDay){
             desc: `The week is almost over! Come and enjoy a Mocha Choca Lata YA YA!`
          };
 
+    break;
+
+    case 5: 
+    today = "Friday";
+    coffee = {
+      color: "brown",
+      name: "Caramel Latte",
+      pic: "images/caramel-latte.jpg",
+      alt: "Caramel Latte Picture",
+      day: "Friday",
+      desc: `Happy Friday! Let's get your weekend started with a spiked Caramel Latte!`
+   };
+     break;
+
+     case 6: 
+     today = "Saturday";
+     coffee = {
+       color: "Orange",
+       name: "Pumpkin Spice Latte",
+       pic: "images/pumpkin-spice-latte.jpg",
+       alt: "Pumpkin Spice Latte",
+       day: "Saturday",
+       desc: `Hungover? Our Pumpkin Spice Latte will have you feeling better!`
+    };
     break;
 
     default: 
