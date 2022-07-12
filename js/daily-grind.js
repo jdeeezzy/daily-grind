@@ -37,8 +37,21 @@ let myDay = myDate.getDay();
 let today = "";
 let coffee = "";
 
+//use location object to access querystring (address bar)
+const queryString = window.location.search;
+    
+//output to console    
+console.log(queryString);
+    
+//separate querystring parameters
+const urlParams = new URLSearchParams(queryString);
 
+if(urlParams.has("day")){//data on querystring, load from querystring
+    myDay =  urlParams.get("day");
+}
 
+// converts to integer as its a string in a querystring
+myDay =  parseInt(myDay);
 
 switch(myDay){
 
@@ -48,12 +61,20 @@ switch(myDay){
 
     case 2: 
       today = "Tuesday";
+      coffee = {
+        color: "black",
+        name: "Cold Brew",
+        pic: "images/cold-brew.jpg",
+        alt: "Cold Brew Picture",
+        day: "Tuesday",
+        desc: `It's Tuesday, and it still may feel like Monday, come get a Cold Brew!`
+     };
     break;
 
     case 3: 
       today = "Wednesday";
       coffee = {
-            color: "Pink",
+            color: "pink",
             // property: "value"
             name: "Bubble Tea",
             pic: "images/bubble-tea.jpg",
@@ -65,11 +86,28 @@ switch(myDay){
 
     break;
 
+    case 4: 
+      today = "Thursday";
+      coffee = {
+            color: "tan",
+            // property: "value"
+            name: "Mocha",
+            pic: "images/mocha.jpg",
+            alt: "Mocha Picture",
+            day: "Thursday",
+            desc: `The week is almost over! Come and enjoy a Mocha Choca Lata YA YA!`
+         };
+
+    break;
+
     default: 
       today = "Something went wrong!";
 }
 
-let coffeeData = coffeeTemplate(coffee);
+// let coffeeData = coffeeTemplate(coffee);
+// alert(coffeeData);
 
-alert(coffeeData);
+// below, this loads the coffee data to the page
+document.getElementById("coffee-cup").innerHTML = coffeeTemplate(coffee);
+document.querySelector("html").style.backgroundColor = coffee.color;
 console.log(coffee);
